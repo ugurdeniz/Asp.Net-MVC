@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "_Layout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-12">
+            <button class="btn btn-primary" type="submit">@Html.ActionLink("Anasayfa","Index","Home")</button>
+            <button class="btn btn-primary" type="submit">@Html.ActionLink("İletisim", "Iletisim", "Home")</button>
+            <button class="btn btn-primary" type="submit">@Html.ActionLink("Referanslar","Referanslar","Home")</button>
+</div>
+        @RenderBody()
+        <div class="col-md-12" style="height:200px;background-image:url(/img/footer.jpg)">
+
+
+        </div>
+    </div>
+</body>
+</html>
+
+
