@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernzr")
+
+    <h2>Html Helper Kullanımı</h2>
+    @{Html.BeginForm("UrunEkle", "Urun", FormMethod.Post, new { @style = "border-color:gray;border-width:2px;border-style:solid;" }); }
+    <br />
+    @Html.Label("KullaniciAd", "Kullanıcı Adı")
+    @Html.TextBox("BolumAd", "Bilgisayar")
+    <br />
+    @Html.Label("Mesaj", "Mesajınız")
+    @Html.TextArea("MesajYazin", "Mesajınızı Buraya Yazın")
+    <br />
+    @Html.Label("IlgiAlani", "İlgi Alanini Seçiniz")
+    @Html.CheckBox("CevapA") Spor
+    @Html.CheckBox("CevapB") Ekonomi
+    @Html.Label("Cinsiyet", "Cinsiyet Seçiniz")
+    @Html.RadioButton("CinsiyetSecim", "Erkek") Erkek
+    @Html.RadioButton("CinsiyetSecim", "Kadın") Kadın
+    @Html.Label("Askerlik", "Askerlik Durumunu Seçiniz")
+    @Html.RadioButton("AskerlikSecim", "Tecilli") Tecilli
+    @Html.RadioButton("AskerlikSecim", "Muaf") Muaf
+    @Html.Label("Takimlar","Tuttuğunuz takım ?")
+    @Html.DropDownList("Takim", new[] {
+
+    new  SelectListItem
+    {
+        Text="Real Madrid", Value="1"
+    },
+
+    new  SelectListItem
+    {
+        Text="Barcelona", Value="2"
+    },
+    new  SelectListItem
+    {
+        Text="Bayer Munih", Value="3"
+    }
+},"Takım Seçin")
+
+@Html.Password("sifre")
+
+@{ Html.EndForm();}
